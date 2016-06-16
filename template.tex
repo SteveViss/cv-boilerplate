@@ -16,8 +16,31 @@
 \usepackage{multicol}
 \setlength{\columnsep}{-3.5cm}
 
+% lang
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[frenchb]{babel}
+
+% NUMBERING
+%--------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\rhead{\thepage/\pageref{LastPage}}
+
 % Uncomment to suppress page numbers
 % \pagenumbering{gobble}
+
+% SPACING
+%--------------------------------
+\usepackage{titlesec}
+
+% PUBLICATION
+%--------------------------------
+\usepackage[style=nature,sorting=ydnt, backend=biber, maxnames=100,defernumbers=true]{biblatex}
+\addbibresource{$bibfile$}
 
 % LANGUAGE
 %--------------------------------
@@ -64,17 +87,16 @@ $endif$
   pdftitle={$name$'s CV},
   colorlinks, breaklinks, xetex, bookmarks,
   filecolor=black,
-  urlcolor=[rgb]{0.117,0.682,0.858},
-  linkcolor=[rgb]{0.117,0.682,0.858},
-  linkcolor=[rgb]{0.117,0.682,0.858},
-  citecolor=[rgb]{0.117,0.682,0.858}
+  urlcolor=[rgb]{0,0.558,0.765},
+  linkcolor=[rgb]{0,0,0},
+  citecolor=[rgb]{0,0.558,0.765}
 }
 
 % DOCUMENT
 %--------------------------------
 \begin{document}
 
-{\LARGE $name$}\\[.2cm]
+{\Large \textbf{$name$}}\\[.2cm]
 
 $if(urls)$
 \begin{multicols}{2}
@@ -99,26 +121,11 @@ $endfor$
 \end{multicols}
 $endif$
 
-\vspace{30pt}
-
 $if(intro)$
 $intro$
 $endif$
 
-\subsection*{Areas of Interest}
-$if(skills)$
-\begin{itemize}
-    $for(skills)$
-      \item $skills$
-    $endfor$
-\end{itemize}
-$endif$
-
-% \vfill
-
-\vspace{25pt}
-
-\section*{Previous Experience}
+\section*{Expériences professionnelles}
 \noindent
 $for(experience)$
 \note{$experience.years$}\textsc{$experience.employer$}\\
@@ -130,16 +137,27 @@ $if(education)$
 \section*{Education}
 \noindent
 $for(education)$
-\note{$education.year$}\textbf{$education.subject$}$if(education.degree)$, $education.degree$$endif$\\
+\note{$education.years$}\textbf{$education.subject$}$if(education.degree)$, $education.degree$$endif$\\
 \emph{$education.institute$}$if(education.city)$, $education.city$$endif$\\[.2cm]
 $endfor$
 $endif$
 
-$if(languages)$
-\section*{Languages}
-$for(languages)$
-\emph{$languages.language$} ($languages.proficiency$)\\
+$if(licenses)$
+\section*{Certificats}
+\noindent
+$for(licenses)$
+\note{$licenses.year$}\textbf{$licenses.subject$}$if(licenses.degree)$, $licenses.degree$$endif$\\
+\emph{$licenses.institute$}$if(licenses.city)$, $licenses.city$$endif$\\[.2cm]
 $endfor$
+$endif$
+
+% $if(publications)$
+% \nocite{*}
+% \printbibliography[title={Articles publiés},type=article,heading=subbibliography,resetnumbers=1]
+% $endif$
+
+$if(conferences)$
+\printbibliography[title={Conférences},type=conference,heading=subbibliography,resetnumbers=1]
 $endif$
 
 \end{document}

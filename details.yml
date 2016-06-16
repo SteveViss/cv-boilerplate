@@ -1,54 +1,133 @@
 ---
 # Personal details
-name: Friedrich Nietzsche
+name: Steve Vissault
+status: Écoinformaticien
 address:
-- Humboldtstraße 36
-- 99425 Weimar
-- Prussia
-phone: "+49 03643 545400"
-email: friedrich@thevoid.de
+- 367 rue Alexandre, app.5
+- J1H 4S9, Sherbrooke
+- Québec (CAN)
+phone: "+1 581 347-9960"
+email: s.vissault@yahoo.fr
 # Insert URLs without http://
 urls:
-- wki.pe/friedrich_nietzsche
-- twitter.com/tinynietzsche
-
-# Sections
-
-intro: "I know my fate. One day my name will be associated with the memory of something tremendous --- a crisis without equal on earth, the most profound collision of conscience, a decision that was conjured up against everything that had been believed, demanded, hallowed so far. I am no man, I am dynamite."
-
-skills:
-- Aesthetics, Ethics, Metaphysics, Nihilism
-- Psychology, Ontology, Poetry, Value theory
-- Voluntarism, Tragedy, Fact–value distinction
-- Anti-foundationalism, Philosophy of history
-
+- github.com/SteveViss/
+- twitter.com/svissault
+- steveviss.github.io
 experience:
-- years: 1879--1889
-  employer: Freiberufler
-  job: Freier Philisoph
-  city: Sils-Maria
-- years: 1869–-1879
-  employer: Universität Basel
-  job: Professor für klassische Philologie
-  city: Basel
-- years: 1867--1868
-  employer: Preußischen Artillerie
-  job: Kanonier
-  city: Naumburg
+- years: 2016--
+  employer: Université de Sherbrooke
+  unit: Chaire de recherche en Écologie Intégrative
+  job: Professionnel de recherche en écoinformatique
+  city: Sherbrooke, CAN
+  description:
+    - Support technique aux étudiants (Programmation et structure de données)
+    - Développement et maintenance de base de données PostgreSQL
+    - Développement de services web (API, portails etc.)
+    - Calcul haute performance sur Mammouth parralèle 2 (UdS).
+- years: 2013 (Été)
+  employer: Université du Québec à Rimouski
+  unit: Chaire de recherche en étude des écosytèmes continentaux
+  job: Auxilliaire de recherche
+  city: Rimouski, CAN
+  description:
+    - Conceptualisation et mise en place d'une base de données PostgreSQL
+    - Logistique d'un workshop (projet QUICC-FOR)
+    - Création d'un site internet (Django Web Framework)
+- years: 2012 (Été)
+  employer: US Fish and Wildlife
+  job: Assistant de recherche
+  city: Anchorage, US
+  description:
+    - Assurer l'installation, la maintenance et la désinstallation d'un camp en région éloignée
+    - Trouver et réaliser le suivie des nids de plusieurs espèces de limicoles
+    - Baguer et prendre des données sur les individus juvéniles
+    - Réaliser une collection des insectes aquatiques et terrestres de l'aire d'étude
+- years: 2012 (Hiver)
+  employer: Université du Québec à Rimouski
+  unit: Chaire de recherche en conservation des écosystèmes nordiques
+  job: Auxilliaire de recherche
+  description: 
+    - Conceptualiser une base de données Access
+    - Compiler des données de baguage
+  city: Rimouski, CAN
+- years: 2011 (Été)
+  employer: Université du Québec à Rimouski
+  unit: Chaire de recherche en conservation des écosystèmes nordiques
+  job: Auxilliaire de recherche
+  description: 
+    - Réaliser une cartographie forestière à l'aide d'une station totale
+    - Développer et concevoir des formulaires et une base de données Access
+    - Valider les données par procédure VBA
+  city: Rimouski, CAN
+- years: 2010 (Été)
+  employer: Cégep de La Pocatière
+  unit: Halte marine de La Pocatière
+  job: Guide interprète
+  description: 
+    - Concevoir un site web et des visuels promotionnels
+    - Sensibiliser le public à la biodiversité et à la fragilité des marais salés
+    - Effectuer un inventaire qualitatif des poissons du marais salé
+  city: La Pocatière, CAN
+  
+- years: 2007 (Été)
+  employer: Wildlife conservation society et Sociétée pour la conservation et le développement 
+  job: Agent de terrain
+  description: 
+    - Localiser et observer la grande faune par télémétrie.
+    - Réhabiliter un sentier d’interprétation
+    - Préparer et réaliser une étude de la phénologie du \textit{Pycnanthus angolensis}.
+  city: Port-Gentil, GA
 
 education:
-- year: 1867
-  subject: Philology
-  institute: Leipzig Universität
-  city: Leipzig
-- year: 1864
-  subject: Abitur
-  institute: Schulpforta
-  city: Naumburg
+- years: 2013--2016
+  subject: Maitrise en Gestion de la Faune et de ses Habitats
+  institute: Université du Québec à Rimouski
+  city: Rimouski
+- years: 2010--2013
+  subject: Baccalauréat en Biologie
+  institute: Université du Québec à Rimouski
+  city: Rimouski
+- years: 2007--2010
+  subject: Technique en Bioécologie
+  institute: Cégep de La Pocatière
+
+licenses:
+- year: 2014
+  subject: Formation en calcul de haute performance (HPC)
+  institute: Calcul Québec
+- year: 2012
+  subject: Permis de possession et acquisition d'une arme à feu
+  institute: Gouvernement du Canada
+- year: 2010
+  subject: Permis de conduire de classe 5
+  institute: Gouvernement du Québec
+- year: 2009
+  subject: Permis de conduire de bateau de plaisance
+  institute: Gouvernement du Canada
+- year: 2008
+  subject: Plongée sous-marine de niveau 1 (\textit{OpenWater})
+  institute: PADI, Nautilus plongée (CAN)
+- year: 2006
+  subject: Brevet d'aptitude et de formation en environnement, spécialité environnement
+  institute: Association Planète Sciences (FR)
+  
+
+grants:
+- year:
+  title:
+  institute:
+  amout:   
+
+# publications:
+# - status: all
+
+conferences:
+- status: all
 
 # Settings
-mainfont: Hoefler Text
+mainfont: Fira Sans Light
 fontsize: 10pt
-lang: English
-geometry: a4paper, left=35mm, right=35mm, top=51mm, bottom=17mm
+lang: frenchb
+bibfile: publi.bib
+geometry: letterpaper, left=35mm, right=25mm, top=25mm, bottom=25mm
 ---
