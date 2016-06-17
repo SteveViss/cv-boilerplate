@@ -155,8 +155,7 @@ $if(references)$
   \item{
   $for(references.author)$
   \ifthenelse{\equal{$references.author.family$}{Vissault}}{\textbf{$references.author.family$ \fl{$references.author.given$.}}}{$references.author.family$ \fl{$references.author.given$.}}.,
-  $endfor$ $for(references.issued)$ $references.issued.year$$endfor$. $references.title$.
-  $references.volume$($references.issue$):$references.page$.$if(references.URL)$\\ \href{$references.URL$}{$references.URL$} $endif$
+  $endfor$ $for(references.issued)$ $references.issued.year$$endfor$. $references.title$. $references.container-title$, $references.volume$($references.issue$):$references.page$.$if(references.URL)$\\ \href{$references.URL$}{$references.URL$} $endif$
   }}{}
   $endfor$
   $for(references)$
@@ -164,7 +163,7 @@ $if(references)$
   \item{
   $for(references.author)$
   \ifthenelse{\equal{$references.author.family$}{Vissault}}{\textbf{$references.author.family$ \fl{$references.author.given$.}}}{$references.author.family$ \fl{$references.author.given$.}}.,
-  $endfor$ $for(references.issued)$ $references.issued.year$$endfor$. $references.title$.
+  $endfor$ $for(references.issued)$ $references.issued.year$$endfor$. $references.title$. \textit{Article soumis}
   }}{}
   $endfor$
 \end{enumerate}
