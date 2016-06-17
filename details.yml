@@ -68,7 +68,6 @@ experience:
     - Sensibiliser le public à la biodiversité et à la fragilité des marais salés
     - Effectuer un inventaire qualitatif des poissons du marais salé
   city: La Pocatière, CAN
-  
 - years: 2007 (Été)
   employer: Wildlife conservation society et Sociétée pour la conservation et le développement 
   job: Agent de terrain
@@ -118,16 +117,11 @@ grants:
   institute:
   amout:   
 
-# publications:
-# - status: all
-
-conferences:
-- status: all
-
 # Settings
 mainfont: Fira Sans Light
 fontsize: 10pt
 lang: frenchb
 bibfile: publi.bib
 geometry: letterpaper, left=35mm, right=25mm, top=25mm, bottom=25mm
+
 ---

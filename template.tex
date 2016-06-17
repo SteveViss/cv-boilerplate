@@ -3,6 +3,18 @@
 
 \documentclass[$fontsize$, a4paper]{article}
 
+
+% MACRO
+%--------------------------------
+\usepackage{xstring}
+\usepackage{ifthen}
+\usepackage{enumitem}
+
+\newcommand{\fl}[1]{%
+    \StrLeft{#1}{1}[\firstletter]%
+    \firstletter
+}
+
 % LAYOUT
 %--------------------------------
 % Margins
@@ -15,11 +27,6 @@
 % Enable multicolumns
 \usepackage{multicol}
 \setlength{\columnsep}{-3.5cm}
-
-% lang
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[frenchb]{babel}
 
 % NUMBERING
 %--------------------------------
@@ -37,19 +44,6 @@
 %--------------------------------
 \usepackage{titlesec}
 
-% PUBLICATION
-%--------------------------------
-\usepackage[style=nature,sorting=ydnt, backend=biber, maxnames=100,defernumbers=true]{biblatex}
-\addbibresource{$bibfile$}
-
-% LANGUAGE
-%--------------------------------
-% Set the main language
-$if(lang)$
-\usepackage{polyglossia}
-\setmainlanguage{$lang$}
-$endif$
-
 % TYPOGRAPHY
 %--------------------------------
 \usepackage{fontspec} 
@@ -64,7 +58,7 @@ $endif$
 % MARGIN NOTES
 %--------------------------------
 \usepackage{marginnote}
-\newcommand{\note}[1]{\marginnote{\scriptsize #1}}
+\newcommand{\note}[1]{\marginnote{\small #1}}
 \renewcommand*{\raggedleftmarginnote}{}
 \setlength{\marginparsep}{7pt}
 \reversemarginpar
@@ -97,6 +91,7 @@ $endif$
 \begin{document}
 
 {\Large \textbf{$name$}}\\[.2cm]
+$status$
 
 $if(urls)$
 \begin{multicols}{2}
@@ -151,13 +146,56 @@ $for(licenses)$
 $endfor$
 $endif$
 
-% $if(publications)$
-% \nocite{*}
-% \printbibliography[title={Articles publiés},type=article,heading=subbibliography,resetnumbers=1]
-% $endif$
+$if(references)$
+\section*{Publications scientifiques}
+\noindent
+\begin{enumerate}[leftmargin=*]
 
-$if(conferences)$
-\printbibliography[title={Conférences},type=conference,heading=subbibliography,resetnumbers=1]
+$for(references)$
+
+\ifthenelse{\equal{$references.type$}{book}}{
+\item{
+$for(references.author)$
+\ifthenelse{\equal{$references.author.family$}{Vissault}}{\textbf{$references.author.family$ \fl{$references.author.given$.}}}{$references.author.family$ \fl{$references.author.given$.}}.,
+$endfor$ $for(references.issued)$ $references.issued.year$$endfor$. $references.title$. $references.publisher$, $references.publisher-place$. $if(references.URL)$ \href{$references.URL$}{Online} $endif$
+}}{}
+$endfor$
+\end{enumerate}
+$endif$
+
+$if(references)$
+\section*{Présentations}
+\noindent
+\begin{enumerate}[leftmargin=*]
+
+$for(references)$
+
+\ifthenelse{\equal{$references.type$}{book}}{
+\item{
+$for(references.author)$
+\ifthenelse{\equal{$references.author.family$}{Vissault}}{\textbf{$references.author.family$ \fl{$references.author.given$.}}}{$references.author.family$ \fl{$references.author.given$.}}.,
+$endfor$ $for(references.issued)$ $references.issued.year$$endfor$. $references.title$. $references.publisher$, $references.publisher-place$. $if(references.URL)$ \href{$references.URL$}{Online} $endif$
+}}{}
+$endfor$
+\end{enumerate}
+$endif$
+
+
+$if(references)$
+\section*{Affiches}
+\noindent
+\begin{enumerate}[leftmargin=*]
+
+$for(references)$
+
+\ifthenelse{\equal{$references.type$}{pamphlet}}{
+\item{
+$for(references.author)$
+\ifthenelse{\equal{$references.author.family$}{Vissault}}{\textbf{$references.author.family$ \fl{$references.author.given$.}}}{$references.author.family$ \fl{$references.author.given$.}}.,
+$endfor$ $for(references.issued)$ $references.issued.year$ $endfor$. $references.title$. $references.publisher$, $references.publisher-place$. $if(references.URL)$ \href{$references.URL$}{Online} $endif$
+}}{}
+$endfor$
+\end{enumerate}
 $endif$
 
 \end{document}

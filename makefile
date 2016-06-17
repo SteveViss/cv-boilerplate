@@ -1,10 +1,15 @@
 TEX = pandoc
-src = template.tex details.yml
+src = template.tex details.yml ref.yml
 FLAGS = --latex-engine=xelatex
 
-output.pdf : $(src)
-	$(TEX) $(filter-out $<,$^ ) -o $@ --template=$< $(FLAGS)
+all: ref.yml cv.pdf
 
-.PHONY: clean
+ref.yml: publi.bib
+	pandoc-citeproc -y $< $ > $@
+
+cv.pdf : $(src)
+	$(TEX)  $(filter-out $<,$^ ) -o $@ --template=$< $(FLAGS)
+
+.PHONY: all
 clean :
-	rm output.pdf
+	rm ref.yml cv.pdf
