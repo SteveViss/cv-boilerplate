@@ -162,21 +162,20 @@ references:
   issued:
   - year: '2014'
     month: '9'
-  title: <span class="nocase">Does probability of occurrence relate to population
-    dynamics?</span>
+  title: Does probability of occurrence relate to population dynamics?
   container-title: Ecography (Cop.).
   publisher: Wiley-Blackwell
   page: '1155-1166'
   volume: '37'
   issue: '12'
-  URL: http://dx.doi.org/10.1111/ecog.00836$\backslash$nhttp://onlinelibrary.wiley.com/store/10.1111/ecog.00836/asset/ecog836.pdf?v=1{\&}t=i3awmj5g{\&}s=73813287e28e9c869114c8118ee19d7e6b3adb62$\backslash$nhttp://onlinelibrary.wiley.com/store/10.1111/ecog.00836/asset/ecog836.pdf?v=1{\&}t=i3aw
+  URL: http://dx.doi.org/10.1111/ecog.00836
   DOI: 10.1111/ecog.00836
   ISBN: '1600-0587'
   ISSN: '09067590'
   PMID: '25722536'
 
 - id: Talluto2state
-  type: article-journal
+  type: manuscript
   author:
   - family: Talluto
     given: Matthew V
@@ -195,7 +194,7 @@ references:
   container-title: Unpubl. Ms
 
 - id: Marchese2016
-  type: article-journal
+  type: manuscript
   author:
   - family: Marchese
     given: Christian

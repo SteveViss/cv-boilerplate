@@ -1,7 +1,7 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[$fontsize$, a4paper]{article}
+\documentclass[$fontsize$, letterpaper]{article}
 
 
 % MACRO
@@ -35,14 +35,10 @@
 \usepackage{lastpage}
 \renewcommand{\headrulewidth}{0pt}
 \fancyhf{}
-\rhead{\thepage/\pageref{LastPage}}
+\rfoot{\thepage/\pageref{LastPage}}
 
 % Uncomment to suppress page numbers
 % \pagenumbering{gobble}
-
-% SPACING
-%--------------------------------
-\usepackage{titlesec}
 
 % TYPOGRAPHY
 %--------------------------------
@@ -67,9 +63,12 @@
 %--------------------------------
 \usepackage{sectsty} 
 \usepackage[normalem]{ulem} 
-\sectionfont{\rmfamily\mdseries} 
 \subsectionfont{\rmfamily\mdseries\scshape\normalsize} 
 \subsubsectionfont{\rmfamily\bfseries\upshape\normalsize} 
+\usepackage[compact]{titlesec}
+\titleformat{\section}
+  {\normalfont\large}{\thesection}{1em}{}[{\titlerule[0.2pt]}]
+
 
 % PDF SETUP
 %--------------------------------
@@ -124,12 +123,13 @@ $endif$
 \noindent
 $for(experience)$
 \note{$experience.years$}\textsc{$experience.employer$}\\
+% $if(experience.unit)$ $experience.unit$\\ $endif$
 \emph{$experience.job$}\\
 $experience.city$\\[.2cm]
 $endfor$
 
 $if(education)$
-\section*{Education}
+\section*{Éducation}
 \noindent
 $for(education)$
 \note{$education.years$}\textbf{$education.subject$}$if(education.degree)$, $education.degree$$endif$\\
@@ -138,7 +138,7 @@ $endfor$
 $endif$
 
 $if(licenses)$
-\section*{Certificats}
+\section*{Certifications}
 \noindent
 $for(licenses)$
 \note{$licenses.year$}\textbf{$licenses.subject$}$if(licenses.degree)$, $licenses.degree$$endif$\\
@@ -150,16 +150,23 @@ $if(references)$
 \section*{Publications scientifiques}
 \noindent
 \begin{enumerate}[leftmargin=*]
-
-$for(references)$
-
-\ifthenelse{\equal{$references.type$}{book}}{
-\item{
-$for(references.author)$
-\ifthenelse{\equal{$references.author.family$}{Vissault}}{\textbf{$references.author.family$ \fl{$references.author.given$.}}}{$references.author.family$ \fl{$references.author.given$.}}.,
-$endfor$ $for(references.issued)$ $references.issued.year$$endfor$. $references.title$. $references.publisher$, $references.publisher-place$. $if(references.URL)$ \href{$references.URL$}{Online} $endif$
-}}{}
-$endfor$
+  $for(references)$
+  \ifthenelse{\equal{$references.type$}{article-journal}}{
+  \item{
+  $for(references.author)$
+  \ifthenelse{\equal{$references.author.family$}{Vissault}}{\textbf{$references.author.family$ \fl{$references.author.given$.}}}{$references.author.family$ \fl{$references.author.given$.}}.,
+  $endfor$ $for(references.issued)$ $references.issued.year$$endfor$. $references.title$.
+  $references.volume$($references.issue$):$references.page$.$if(references.URL)$\\ \href{$references.URL$}{$references.URL$} $endif$
+  }}{}
+  $endfor$
+  $for(references)$
+  \ifthenelse{\equal{$references.type$}{manuscript}}{
+  \item{
+  $for(references.author)$
+  \ifthenelse{\equal{$references.author.family$}{Vissault}}{\textbf{$references.author.family$ \fl{$references.author.given$.}}}{$references.author.family$ \fl{$references.author.given$.}}.,
+  $endfor$ $for(references.issued)$ $references.issued.year$$endfor$. $references.title$.
+  }}{}
+  $endfor$
 \end{enumerate}
 $endif$
 

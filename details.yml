@@ -17,7 +17,7 @@ experience:
 - years: 2016--
   employer: Université de Sherbrooke
   unit: Chaire de recherche en Écologie Intégrative
-  job: Professionnel de recherche en écoinformatique
+  job: Professionnel de recherche
   city: Sherbrooke, CAN
   description:
     - Support technique aux étudiants (Programmation et structure de données)
@@ -81,11 +81,9 @@ education:
 - years: 2013--2016
   subject: Maitrise en Gestion de la Faune et de ses Habitats
   institute: Université du Québec à Rimouski
-  city: Rimouski
 - years: 2010--2013
   subject: Baccalauréat en Biologie
   institute: Université du Québec à Rimouski
-  city: Rimouski
 - years: 2007--2010
   subject: Technique en Bioécologie
   institute: Cégep de La Pocatière
@@ -117,11 +115,16 @@ grants:
   institute:
   amout:   
 
+skills:
+- year:
+  title:
+  institute:
+  amout:   
+
 # Settings
 mainfont: Fira Sans Light
 fontsize: 10pt
 lang: frenchb
-bibfile: publi.bib
-geometry: letterpaper, left=35mm, right=25mm, top=25mm, bottom=25mm
+geometry: letterpaper, left=40mm, right=20mm, top=20mm, bottom=20mm
 
 ---
