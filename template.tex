@@ -62,12 +62,12 @@
 % HEADINGS
 %--------------------------------
 \usepackage{sectsty} 
-\usepackage[normalem]{ulem} 
+\usepackage[normalem]{ulem}
 \subsectionfont{\rmfamily\mdseries\scshape\normalsize} 
 \subsubsectionfont{\rmfamily\bfseries\upshape\normalsize} 
 \usepackage[compact]{titlesec}
 \titleformat{\section}
-  {\normalfont\large}{\thesection}{1em}{}[{\titlerule[0.2pt]}]
+  {\normalfont\large\bfseries}{\thesection}{1em}{}[{\titlerule[0.2pt]}]
 
 
 % PDF SETUP
@@ -122,8 +122,8 @@ $endif$
 \section*{Expériences professionnelles}
 \noindent
 $for(experience)$
-\note{$experience.years$}\textsc{$experience.employer$}\\
-% $if(experience.unit)$ $experience.unit$\\ $endif$
+\note{$experience.years$}
+$if(experience.unit)$$experience.unit$,$endif$ \textsc{$experience.employer$} \\
 \emph{$experience.job$}\\
 $experience.city$\\[.2cm]
 $endfor$
@@ -132,7 +132,7 @@ $if(education)$
 \section*{Éducation}
 \noindent
 $for(education)$
-\note{$education.years$}\textbf{$education.subject$}$if(education.degree)$, $education.degree$$endif$\\
+\note{$education.years$}$education.subject$$if(education.degree)$, $education.degree$$endif$\\
 \emph{$education.institute$}$if(education.city)$, $education.city$$endif$\\[.2cm]
 $endfor$
 $endif$
@@ -141,7 +141,7 @@ $if(licenses)$
 \section*{Certifications}
 \noindent
 $for(licenses)$
-\note{$licenses.year$}\textbf{$licenses.subject$}$if(licenses.degree)$, $licenses.degree$$endif$\\
+\note{$licenses.year$}$licenses.subject$$if(licenses.degree)$, $licenses.degree$$endif$\\
 \emph{$licenses.institute$}$if(licenses.city)$, $licenses.city$$endif$\\[.2cm]
 $endfor$
 $endif$

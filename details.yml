@@ -6,7 +6,7 @@ address:
 - 367 rue Alexandre, app.5
 - J1H 4S9, Sherbrooke
 - Québec (CAN)
-phone: "+1 581 347-9960"
+phone: "+1 819 347-9960"
 email: s.vissault@yahoo.fr
 # Insert URLs without http://
 urls:
@@ -52,7 +52,7 @@ experience:
   city: Rimouski, CAN
 - years: 2011 (Été)
   employer: Université du Québec à Rimouski
-  unit: Chaire de recherche en conservation des écosystèmes nordiques
+  unit: Chaire de recherche en étude des écosytèmes continentaux
   job: Auxilliaire de recherche
   description: 
     - Réaliser une cartographie forestière à l'aide d'une station totale
@@ -79,14 +79,15 @@ experience:
 
 education:
 - years: 2013--2016
-  subject: Maitrise en Gestion de la Faune et de ses Habitats
+  subject: M.Sc. Gestion de la Faune et de ses Habitats
   institute: Université du Québec à Rimouski
 - years: 2010--2013
-  subject: Baccalauréat en Biologie
+  subject: B.Sc. Biologie
   institute: Université du Québec à Rimouski
 - years: 2007--2010
   subject: Technique en Bioécologie
   institute: Cégep de La Pocatière
+  Honour: Reconnaissance de leadership, Nominé à titre d'ambassadeur
 
 licenses:
 - year: 2014
