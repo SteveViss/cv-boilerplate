@@ -67,7 +67,7 @@
 \subsubsectionfont{\rmfamily\bfseries\upshape\normalsize} 
 \usepackage[compact]{titlesec}
 \titleformat{\section}
-  {\normalfont\large\bfseries}{\thesection}{1em}{}[{\titlerule[0.2pt]}]
+  {\normalfont\large}{\thesection}{1em}{}[{\titlerule[0.2pt]}]
 
 
 % PDF SETUP
@@ -92,7 +92,7 @@
 {\Large \textbf{$name$}}\\[.2cm]
 $status$
 
-$if(urls)$
+$if(skills)$ 
 \begin{multicols}{2}
 $endif$
 
@@ -107,12 +107,18 @@ $phone$\\
 
 
 $if(urls)$
-\columnbreak
-
 $for(urls)$
-\href{http://$urls$}{$urls$}\\
+Site internet: \href{http://$urls$}{$urls$}\\
 $endfor$
+
+$if(skills)$
+\columnbreak
+\textbf{Programmation scientifique}\\[.2cm]
+Programmation -- $skills.program$ \\
+Texte -- $skills.text$\\
+Base de données -- $skills.bd$ \\
 \end{multicols}
+$endif$
 $endif$
 
 $if(intro)$
@@ -133,7 +139,8 @@ $if(education)$
 \noindent
 $for(education)$
 \note{$education.years$}$education.subject$$if(education.degree)$, $education.degree$$endif$\\
-\emph{$education.institute$}$if(education.city)$, $education.city$$endif$\\[.2cm]
+\emph{$education.institute$}$if(education.city)$, $education.city$$endif$\\
+$if(education.honour)$\textbf{$education.honour$}$endif$\\[.2cm]
 $endfor$
 $endif$
 
@@ -143,6 +150,14 @@ $if(licenses)$
 $for(licenses)$
 \note{$licenses.year$}$licenses.subject$$if(licenses.degree)$, $licenses.degree$$endif$\\
 \emph{$licenses.institute$}$if(licenses.city)$, $licenses.city$$endif$\\[.2cm]
+$endfor$
+$endif$
+
+$if(grants)$
+\section*{Bourses}
+\noindent
+$for(grants)$
+\note{$grants.year$} $grants.title$, $grants.institute$ ($grants.amount$) \\[.2cm]
 $endfor$
 $endif$
 

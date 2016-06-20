@@ -10,8 +10,6 @@ phone: "+1 819 347-9960"
 email: s.vissault@yahoo.fr
 # Insert URLs without http://
 urls:
-- github.com/SteveViss/
-- twitter.com/svissault
 - steveviss.github.io
 experience:
 - years: 2016--
@@ -87,7 +85,7 @@ education:
 - years: 2007--2010
   subject: Technique en Bioécologie
   institute: Cégep de La Pocatière
-  Honour: Reconnaissance de leadership, Nominé à titre d'ambassadeur
+  honour: Reconnaissance de leadership, Nominé à titre d'ambassadeur
 
 licenses:
 - year: 2014
@@ -111,16 +109,15 @@ licenses:
   
 
 grants:
-- year:
-  title:
-  institute:
-  amout:   
+- year: 2011
+  title: Modélisation de la compléxité de la Forêt
+  institute: UQAM
+  amount: 10,000$
 
 skills:
-- year:
-  title:
-  institute:
-  amout:   
+ program: R, C/C++, HTML/CSS
+ text: \LaTeX, Markdown
+ bd: PostgreSQL \& PostGIS
 
 # Settings
 mainfont: Fira Sans Light
